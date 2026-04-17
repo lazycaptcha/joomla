@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="captcha" method="upgrade">
+    <name>plg_captcha_lazycaptcha</name>
+    <author>LazyCaptcha</author>
+    <creationDate>2026-04</creationDate>
+    <copyright>(C) 2026 LazyCaptcha contributors</copyright>
+    <license>MIT</license>
+    <authorEmail>hello@lazycaptcha.com</authorEmail>
+    <authorUrl>https://lazycaptcha.com</authorUrl>
+    <version>0.1.0</version>
+    <description>PLG_CAPTCHA_LAZYCAPTCHA_XML_DESCRIPTION</description>
+
+    <files>
+        <filename plugin="lazycaptcha">lazycaptcha.php</filename>
+        <filename>README.md</filename>
+        <filename>LICENSE</filename>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_captcha_lazycaptcha.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_captcha_lazycaptcha.sys.ini</language>
+    </languages>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="site_key"
+                    type="text"
+                    default=""
+                    label="PLG_CAPTCHA_LAZYCAPTCHA_SITE_KEY_LABEL"
+                    description="PLG_CAPTCHA_LAZYCAPTCHA_SITE_KEY_DESC"
+                    size="50"
+                    required="true"
+                    filter="cmd"
+                />
+                <field
+                    name="secret_key"
+                    type="password"
+                    default=""
+                    label="PLG_CAPTCHA_LAZYCAPTCHA_SECRET_KEY_LABEL"
+                    description="PLG_CAPTCHA_LAZYCAPTCHA_SECRET_KEY_DESC"
+                    size="50"
+                    required="true"
+                    autocomplete="new-password"
+                />
+                <field
+                    name="base_url"
+                    type="url"
+                    default="https://lazycaptcha.com"
+                    label="PLG_CAPTCHA_LAZYCAPTCHA_BASE_URL_LABEL"
+                    description="PLG_CAPTCHA_LAZYCAPTCHA_BASE_URL_DESC"
+                    size="50"
+                />
+                <field
+                    name="theme"
+                    type="list"
+                    default="light"
+                    label="PLG_CAPTCHA_LAZYCAPTCHA_THEME_LABEL"
+                    description="PLG_CAPTCHA_LAZYCAPTCHA_THEME_DESC"
+                >
+                    <option value="light">PLG_CAPTCHA_LAZYCAPTCHA_THEME_LIGHT</option>
+                    <option value="dark">PLG_CAPTCHA_LAZYCAPTCHA_THEME_DARK</option>
+                </field>
+                <field
+                    name="type"
+                    type="list"
+                    default="auto"
+                    label="PLG_CAPTCHA_LAZYCAPTCHA_TYPE_LABEL"
+                    description="PLG_CAPTCHA_LAZYCAPTCHA_TYPE_DESC"
+                >
+                    <option value="auto">PLG_CAPTCHA_LAZYCAPTCHA_TYPE_AUTO</option>
+                    <option value="image_puzzle">PLG_CAPTCHA_LAZYCAPTCHA_TYPE_IMAGE</option>
+                    <option value="pow">PLG_CAPTCHA_LAZYCAPTCHA_TYPE_POW</option>
+                    <option value="behavioral">PLG_CAPTCHA_LAZYCAPTCHA_TYPE_BEHAVIORAL</option>
+                    <option value="text_math">PLG_CAPTCHA_LAZYCAPTCHA_TYPE_TEXT</option>
+                </field>
+                <field
+                    name="timeout"
+                    type="number"
+                    default="5"
+                    label="PLG_CAPTCHA_LAZYCAPTCHA_TIMEOUT_LABEL"
+                    description="PLG_CAPTCHA_LAZYCAPTCHA_TIMEOUT_DESC"
+                    min="1"
+                    max="30"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
