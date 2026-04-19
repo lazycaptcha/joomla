@@ -74,6 +74,8 @@
                     <option value="pow">PLG_CAPTCHA_LAZYCAPTCHA_TYPE_POW</option>
                     <option value="behavioral">PLG_CAPTCHA_LAZYCAPTCHA_TYPE_BEHAVIORAL</option>
                     <option value="text_math">PLG_CAPTCHA_LAZYCAPTCHA_TYPE_TEXT</option>
+                    <option value="press_hold">PLG_CAPTCHA_LAZYCAPTCHA_TYPE_PRESS_HOLD</option>
+                    <option value="rotate_align">PLG_CAPTCHA_LAZYCAPTCHA_TYPE_ROTATE_ALIGN</option>
                 </field>
                 <field
                     name="timeout"
