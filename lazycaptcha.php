@@ -62,7 +62,7 @@ class PlgCaptchaLazycaptcha extends CMSPlugin
         }
 
         $type = $this->params->get('type', 'auto');
-        $theme = $this->params->get('theme', 'light');
+        $theme = $this->params->get('theme', 'auto');
 
         $classes = trim('lazycaptcha ' . $class);
 
