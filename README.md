@@ -36,7 +36,8 @@ Then install the ZIP through the Joomla extension installer.
 3. Enter your **Site Key** and **Secret Key** from your LazyCaptcha dashboard
 4. (Optional) Change **LazyCaptcha URL** if self-hosting — defaults to `https://lazycaptcha.com`
 5. Pick a challenge type (`Auto` recommended)
-6. Enable the plugin (set **Status** to Enabled)
+6. (Optional) Choose a widget preset or width override
+7. Enable the plugin (set **Status** to Enabled)
 
 ## Activate on forms
 
@@ -62,9 +63,9 @@ $passed = $captcha->checkAnswer(null);
 
 ## How it works
 
-1. On form render, the plugin outputs a `<div class="lazycaptcha" data-sitekey="...">` and loads the LazyCaptcha widget script
+1. On form render, the plugin outputs a `<div class="lazycaptcha" data-sitekey="...">` plus the configured type, theme, widget preset, and optional width override, then loads the LazyCaptcha widget script
 2. The widget renders the challenge in an isolated Shadow DOM (no CSS conflicts with your Joomla template)
-3. When solved, the widget injects a hidden `lazycaptcha-token` into the form
+3. After the visitor completes the challenge flow, the widget injects a hidden `lazycaptcha-token` into the form
 4. On submit, the plugin's `onCheckAnswer()` reads the token and verifies it server-to-server against `POST /api/captcha/v1/verify`
 5. On success, Joomla lets the submission proceed; on failure, an error message is enqueued
 

@@ -7,7 +7,7 @@
     <license>MIT</license>
     <authorEmail>hello@lazycaptcha.com</authorEmail>
     <authorUrl>https://lazycaptcha.com</authorUrl>
-    <version>0.1.0</version>
+    <version>2.0.0</version>
     <description>PLG_CAPTCHA_LAZYCAPTCHA_XML_DESCRIPTION</description>
 
     <files>
@@ -55,12 +55,33 @@
                 <field
                     name="theme"
                     type="list"
-                    default="light"
+                    default="auto"
                     label="PLG_CAPTCHA_LAZYCAPTCHA_THEME_LABEL"
                     description="PLG_CAPTCHA_LAZYCAPTCHA_THEME_DESC"
                 >
                     <option value="light">PLG_CAPTCHA_LAZYCAPTCHA_THEME_LIGHT</option>
                     <option value="dark">PLG_CAPTCHA_LAZYCAPTCHA_THEME_DARK</option>
+                    <option value="auto">PLG_CAPTCHA_LAZYCAPTCHA_THEME_AUTO</option>
+                </field>
+                <field
+                    name="widget"
+                    type="list"
+                    default="standard"
+                    label="PLG_CAPTCHA_LAZYCAPTCHA_WIDGET_LABEL"
+                    description="PLG_CAPTCHA_LAZYCAPTCHA_WIDGET_DESC"
+                >
+                    <option value="standard">PLG_CAPTCHA_LAZYCAPTCHA_WIDGET_STANDARD</option>
+                    <option value="compact">PLG_CAPTCHA_LAZYCAPTCHA_WIDGET_COMPACT</option>
+                    <option value="newsletter">PLG_CAPTCHA_LAZYCAPTCHA_WIDGET_NEWSLETTER</option>
+                    <option value="login">PLG_CAPTCHA_LAZYCAPTCHA_WIDGET_LOGIN</option>
+                </field>
+                <field
+                    name="width"
+                    type="text"
+                    default=""
+                    label="PLG_CAPTCHA_LAZYCAPTCHA_WIDTH_LABEL"
+                    description="PLG_CAPTCHA_LAZYCAPTCHA_WIDTH_DESC"
+                    size="20"
                 </field>
                 <field
                     name="type"

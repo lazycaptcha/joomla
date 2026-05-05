@@ -63,16 +63,23 @@ class PlgCaptchaLazycaptcha extends CMSPlugin
 
         $type = $this->params->get('type', 'auto');
         $theme = $this->params->get('theme', 'auto');
+        $widget = $this->params->get('widget', 'standard');
+        $width = trim((string) $this->params->get('width', ''));
 
         $classes = trim('lazycaptcha ' . $class);
+        $widthAttr = $width !== ''
+            ? ' data-width="' . htmlspecialchars($width, ENT_QUOTES, 'UTF-8') . '"'
+            : '';
 
         return sprintf(
-            '<div id="%s" class="%s" data-sitekey="%s" data-type="%s" data-theme="%s"></div>',
+            '<div id="%s" class="%s" data-sitekey="%s" data-type="%s" data-theme="%s" data-widget="%s"%s></div>',
             htmlspecialchars($id, ENT_QUOTES, 'UTF-8'),
             htmlspecialchars($classes, ENT_QUOTES, 'UTF-8'),
             htmlspecialchars($siteKey, ENT_QUOTES, 'UTF-8'),
             htmlspecialchars($type, ENT_QUOTES, 'UTF-8'),
-            htmlspecialchars($theme, ENT_QUOTES, 'UTF-8')
+            htmlspecialchars($theme, ENT_QUOTES, 'UTF-8'),
+            htmlspecialchars($widget, ENT_QUOTES, 'UTF-8'),
+            $widthAttr
         );
     }
 
